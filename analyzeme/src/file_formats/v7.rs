@@ -3,7 +3,7 @@
 
 use std::error::Error;
 
-use analyzeme_9_2_0::ProfilingData;
+use analyzeme_9::ProfilingData;
 use decodeme::{
     event::Event,
     event_payload::{EventPayload, Timestamp},
@@ -11,7 +11,7 @@ use decodeme::{
     Metadata,
 };
 
-pub const FILE_FORMAT: u32 = analyzeme_9_2_0::CURRENT_FILE_FORMAT_VERSION;
+pub const FILE_FORMAT: u32 = analyzeme_9::CURRENT_FILE_FORMAT_VERSION;
 
 #[derive(Debug)]
 pub struct EventDecoder {
@@ -70,9 +70,9 @@ impl super::EventDecoder for EventDecoder {
     }
 }
 
-fn convert_timestamp(legacy_timestamp: analyzeme_9_2_0::Timestamp) -> Timestamp {
+fn convert_timestamp(legacy_timestamp: analyzeme_9::Timestamp) -> Timestamp {
     match legacy_timestamp {
-        analyzeme_9_2_0::Timestamp::Interval { start, end } => Timestamp::Interval { start, end },
-        analyzeme_9_2_0::Timestamp::Instant(t) => Timestamp::Instant(t),
+        analyzeme_9::Timestamp::Interval { start, end } => Timestamp::Interval { start, end },
+        analyzeme_9::Timestamp::Instant(t) => Timestamp::Instant(t),
     }
 }
