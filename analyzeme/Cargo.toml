@@ -23,7 +23,6 @@ smallvec.workspace = true
 
 # File format: v8
 decodeme_10_1_2.workspace = true
-measureme_10_1_2.workspace = true
 
 [dev-dependencies]
 flate2.workspace = true
